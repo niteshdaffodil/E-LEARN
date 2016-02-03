@@ -7,5 +7,5 @@ module.exports.server = {
 };
 
 module.exports.db = {
-	
+
 };
