@@ -14,3 +14,11 @@ exports.handleSuccess = function (req, res, next) {
 exports.errorHandler = function (req, res, next) {
 	return res.json(resObject);
 };
+
+module.exports.responseObject = function(statusCode, message, result){
+	return	{
+		statusCode: statusCode ? statusCode : 200,
+		message: message ? message : "ok",
+		result: result ? result : {}
+	}
+}

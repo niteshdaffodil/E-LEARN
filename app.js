@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
 
 var config = require('./config/config')
 var routes = require('./routes/index');
@@ -11,6 +12,14 @@ var users = require('./routes/users');
 var handler = require('./helper/response.js');
 
 var app = express();
+mongoose.connect(config.database.address);
+var db = mongoose.connection;
+db.on('error', function(error){
+  console.log("database not connected ",error);
+});
+db.once('open', function() {
+  console.log("Database connected");
+});
 // view engine setup
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');

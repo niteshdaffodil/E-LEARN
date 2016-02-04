@@ -1,7 +1,6 @@
 var jwt = require('jwt-simple');
 var config = require('../config/config');
-
-
+var helper = require('./response');
 
 module.exports = {
 	authentication: function(req, res, next) {
@@ -20,14 +19,14 @@ module.exports = {
 				console.log("decoded",decoded);
 				res.token = decoded;
 				if (decoded.exp <= Date.now()) {
-  					res.json({message:'Access token has expired', status:400, error:true});
+  					res.json(helper.responseObject(400, 'Access token has expired', null));
 				}
 				next();
 			} catch (err) {
-				res.json({message:'Access token has expired', status:400, error:true});
+				res.json(helper.responseObject(401, 'unauthorized', null));
 			}
 		} else {
-			next();
+			res.json(helper.responseObject(401, 'unauthorized', null));
 		}
 	}
 }
