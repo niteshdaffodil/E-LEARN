@@ -8,16 +8,16 @@ module.exports = {
 		  iss: 12345678,
 		  exp: 124234
 		}, config.keys.jwtTokenSecret);
-		res.token = token;
+		req.token = token;
 		next();
 	},
 	authValidation: function(req, res, next){
-		var token = res.token;
+		var token = req.token;
 		if (token) {
 			try {
 				var decoded = jwt.decode(token, app.get('jwtTokenSecret'));
 				console.log("decoded",decoded);
-				res.token = decoded;
+				req.token = decoded;
 				if (decoded.exp <= Date.now()) {
   					res.json(helper.responseObject(400, 'Access token has expired', null));
 				}

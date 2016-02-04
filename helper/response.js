@@ -1,24 +1,23 @@
 
-exports.handleSuccess = function (req, res, next) {
-	if(res.result === 'undefined')	{
-		next();
-	}
-	var resObject = {
-		status:200,
-		data:res.result,
-		message:"ok"
-	}
-	return res.json(resObject);
-};
+responseHelper = {
+	handleSuccess : function (req, res, next) {
+		
+		var resData = { result: req.result, token: req.token ? req.token : null }
+		res.json(responseHelper.responseObject(200, "ok", resData));
+	
+	},
 
-exports.errorHandler = function (req, res, next) {
-	return res.json(resObject);
-};
+	errorHandler : function (req, res, next) {
+		//return res.json(resObject);
+	},
 
-module.exports.responseObject = function(statusCode, message, result){
-	return	{
-		statusCode: statusCode ? statusCode : 200,
-		message: message ? message : "ok",
-		result: result ? result : {}
+	responseObject : function(statusCode, message, result){
+		return	{
+			statusCode: statusCode ? statusCode : 200,
+			message: message ? message : "ok",
+			result: result ? result : {}
+		}
 	}
 }
+
+module.exports = responseHelper;

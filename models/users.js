@@ -3,12 +3,14 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var userSchema = Schema({
-  email: { type: String, required: true },
+  email: { type: String, required: true, unique: true },
   username :  { type: String, required: true, trim: true },
   password : { type: String, required: true },
-  lastlogin_At : { type: Date }
+  lastlogin_At : { type: Date },
+  avar_url : { type: String },
+  ambassdor : { type: Boolean, default: false }
 });
 
-groupSchema.plugin(timestamps);
+userSchema.plugin(timestamps);
 
 module.exports = mongoose.model('Users',userSchema);

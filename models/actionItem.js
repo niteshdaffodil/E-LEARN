@@ -8,6 +8,6 @@ var actionItemSchema = Schema({
   lession : { type: Schema.Types.ObjectId, ref: 'Lessions', required: true },
 });
 
-groupSchema.plugin(timestamps);
+actionItemSchema.plugin(timestamps);
 
 module.exports = mongoose.model('ActionItems',actionItemSchema);
