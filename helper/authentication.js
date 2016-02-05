@@ -4,8 +4,9 @@ var helper = require('./response');
 
 module.exports = {
 	authentication: function(req, res, next) {
+		var iss = req.result._id;
 		var token = jwt.encode({
-		  iss: 12345678,
+		  iss: iss,
 		  exp: 124234
 		}, config.keys.jwtTokenSecret);
 		req.token = token;
@@ -16,7 +17,6 @@ module.exports = {
 		if (token) {
 			try {
 				var decoded = jwt.decode(token, app.get('jwtTokenSecret'));
-				console.log("decoded",decoded);
 				req.token = decoded;
 				if (decoded.exp <= Date.now()) {
   					res.json(helper.responseObject(400, 'Access token has expired', null));
