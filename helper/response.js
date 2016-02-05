@@ -11,11 +11,12 @@ responseHelper = {
 		//return res.json(resObject);
 	},
 
-	responseObject : function(statusCode, message, result){
+	responseObject : function(statusCode, message, result ,error){
 		return	{
 			statusCode: statusCode ? statusCode : 200,
 			message: message ? message : "ok",
-			result: result ? result : {}
+			result: result ? result : {},
+			error: error ? error : false
 		}
 	}
 }
