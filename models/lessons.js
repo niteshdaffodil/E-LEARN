@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var lessionSchema = Schema({
+var lessonSchema = Schema({
   unit : { type: Schema.Types.ObjectId, ref: 'Unit', required: true },
   name : { type: String, required: true},
   basic_description : { type: String, required: true},
@@ -10,4 +10,4 @@ var lessionSchema = Schema({
   deleted : { type: Boolean, default: false }
 });
 
-module.exports = mongoose.model('Lessions',lessionSchema);
+module.exports = mongoose.model('Lessons',lessonSchema);

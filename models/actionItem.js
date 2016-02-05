@@ -5,7 +5,7 @@ var Schema = mongoose.Schema;
 var actionItemSchema = Schema({
   group : { type: Schema.Types.ObjectId, ref: 'Groups', },
   user : { type: Schema.Types.ObjectId, ref: 'Users', required: true },
-  lession : { type: Schema.Types.ObjectId, ref: 'Lessions', required: true },
+  lesson : { type: Schema.Types.ObjectId, ref: 'Lessons', required: true },
   deleted : { type: Boolean, default: false }
 });
 
