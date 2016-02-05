@@ -8,7 +8,9 @@ var userSchema = Schema({
   password : { type: String, required: true },
   lastlogin_At : { type: Date },
   avar_url : { type: String },
-  ambassdor : { type: Boolean, default: false }
+  ambassdor : { type: Boolean, default: false },
+  rev : { type: Number, default: 0 },
+  deleted : { type: Boolean, default: false }
 });
 
 userSchema.plugin(timestamps);

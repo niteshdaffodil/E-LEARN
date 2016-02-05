@@ -6,6 +6,7 @@ var actionItemSchema = Schema({
   group : { type: Schema.Types.ObjectId, ref: 'Groups', },
   user : { type: Schema.Types.ObjectId, ref: 'Users', required: true },
   lession : { type: Schema.Types.ObjectId, ref: 'Lessions', required: true },
+  deleted : { type: Boolean, default: false }
 });
 
 actionItemSchema.plugin(timestamps);

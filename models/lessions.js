@@ -7,6 +7,7 @@ var lessionSchema = Schema({
   basic_description : { type: String, required: true},
   detailed_description : String,
   action_description : String,
+  deleted : { type: Boolean, default: false }
 });
 
 module.exports = mongoose.model('Lessions',lessionSchema);
