@@ -4,6 +4,9 @@ var Schema = mongoose.Schema;
 
 var groupSchema = Schema({
   name : { type: String, required: true },
+  description : { type: String, required: true },
+  owner : { type: Schema.Types.ObjectId, ref: 'Users', required: true },
+  avatar_url : { type: String },
   deleted : { type: Boolean, default: false }
 });
 

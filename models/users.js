@@ -3,11 +3,13 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var userSchema = Schema({
-  email: { type: String, required: true, unique: true },
-  username :  { type: String, required: true, trim: true },
+  email: { type: String, required: true, unique: true }	,
+  username :  { type: String, required: true, unique: true, trim: true },
   password : { type: String, required: true },
-  lastlogin_At : { type: Date },
-  avar_url : { type: String },
+  name : { type: String, required: true },
+  age : { type: Date, required: true },
+  lastlogin_at : { type: Date },
+  avatar_url : { type: String },
   ambassdor : { type: Boolean, default: false },
   rev : { type: Number, default: 0 },
   deleted : { type: Boolean, default: false }

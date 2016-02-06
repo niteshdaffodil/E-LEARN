@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 var userGroupSchema = Schema({
   group : { type: Schema.Types.ObjectId, ref: 'Groups', required: true },
   user : { type: Schema.Types.ObjectId, ref: 'Users', required: true },
-  deleted : { type: Boolean, default: false }
+  status : { type:String, enum:['1','2'], default:'1'}
 });
 
-module.exports = mongoose.model('UserGroup',userGroupSchema);
+module.exports = mongoose.model('UserGroups',userGroupSchema);

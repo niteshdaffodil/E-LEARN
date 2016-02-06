@@ -2,11 +2,10 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var lessonSchema = Schema({
-  unit : { type: Schema.Types.ObjectId, ref: 'Unit', required: true },
+  module : { type: Schema.Types.ObjectId, ref: 'Modules', required: true },
   name : { type: String, required: true},
   basic_description : { type: String, required: true},
-  detailed_description : String,
-  action_description : String,
+  detailed_description : { type: String },
   deleted : { type: Boolean, default: false }
 });
 
