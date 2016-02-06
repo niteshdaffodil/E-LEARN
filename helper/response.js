@@ -1,14 +1,8 @@
 
 responseHelper = {
 	handleSuccess : function (req, res, next) {
-		
 		var resData = { result: req.result, token: req.token ? req.token : null }
-		res.json(responseHelper.responseObject(200, "ok", resData));
-	
-	},
-
-	errorHandler : function (req, res, next) {
-		//return res.json(resObject);
+		res.json(responseHelper.responseObject(200, "ok", resData, false));
 	},
 
 	responseObject : function(statusCode, message, result ,error){
