@@ -7,7 +7,7 @@ var userSchema = Schema({
   email: { type: String, required: true, unique: true },
   password : { type: String, required: true },
   name : { type: String, required: true },
-  dob : { type: DateOnly, required: true },
+  dob : { type: String, required: true },
   lastlogin_at : { type: Date },
   avatar_url : { type: String },
   ambassdor : { type: Boolean, default: false },

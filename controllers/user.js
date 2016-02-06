@@ -1,6 +1,22 @@
 var User = require('../models/users');
 var helper = require('../helper/response');
+var validator = require('validator');
+
 module.exports = {
+	validateData: function(req, res, next){
+
+		if(! validator.isEmail(req.body.email)){
+			res.json(helper.responseObject(422, 'email invalid', null, true));
+		}else if(! ((req.body.name).length > 2) ){
+			res.json(helper.responseObject(422, 'name invalid', null, true));
+		}else if(! validator.isDate(req.body.dob)){
+			res.json(helper.responseObject(422, 'Date invalid',  null, true));
+		}else if(! ((req.body.password).length > 5) ){
+			res.json(helper.responseObject(422, err, 'password invalid', true));	
+		}else{
+			next();
+		}
+	},
 	signup : function(req, res, next){
 		(new User(req.body)).save()
 		.then(function(user){
@@ -13,18 +29,23 @@ module.exports = {
 		});
 	},
 	validateEmail : function(req, res, next){
-		User.find({email:req.params.email})
-		.then(function(user){
-			if(!user){
-				req.result = { message:"varified" };
-				next();
-			}else {
-				req.result = { message:"email already registered"};
-				next();
-			}
-		})
-		.catch(function(err){
-			res.json(helper.responseObject(422, err, null, true));
-		})
+
+		if(validator.isEmail(req.params.email)){
+			User.find({email:req.params.email})
+			.then(function(user){
+				if(!user.length){
+					req.result = { message:"varified" };
+					next();
+				}else {
+					req.result = { message:"email already registered"};
+					next();
+				}
+			})
+			.catch(function(err){
+				res.json(helper.responseObject(422, err, null, true));
+			})
+		}else {
+			res.json(helper.responseObject(422, 'email invalid', null, true));
+		}
 	}
 }
