@@ -1,0 +1,46 @@
+
+
+/* ==========================================================================
+   Global style rules
+   ========================================================================== */
+
+/* ...............  Include fonts - oxygen bold & source sans pro - regular .............. */
+
+@import url(https://fonts.googleapis.com/css?family=Oxygen);
+
+@font-face {
+  font-family: 'Oxygen-Bold';
+  src: url('../fonts/Oxygen-Bold.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/Oxygen-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/Oxygen-Bold.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/Oxygen-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/Oxygen-Bold.svg#svgOxygen-Bold') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+  font-family: 'SourceSansPro-Regular';
+  src: url('../fonts/SourceSansPro-Regular.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/SourceSansPro-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/SourceSansPro-Regular.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/SourceSansPro-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/SourceSansPro-Regular.svg#svgSourceSansPro-Regular') format('svg'); /* Legacy iOS */
+}
+
+/* ...............  font decleration */
+body { font-family: 'SourceSansPro-Regular',Helvetica,Arial,sans-serif; }
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, button {
+	font-family: 'Oxygen-Bold',Helvetica,Arial,sans-serif;
+}
+
+h3.block-heading { font-size: 27px; }
+
+/* ...............  General resets ..................  */
+ul, li { list-style:none; margin: 0; padding: 0; }
+
+a:hover { text-decoration: underline; }
+a:hover, a:focus, a:active {
+	outline: 0;
+} 
+
+.btn:focus, button:focus { outline: none; }

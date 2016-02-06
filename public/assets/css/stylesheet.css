@@ -1,0 +1,310 @@
+
+
+/* ==========================================================================
+   Global style rules
+   ========================================================================== */
+
+/* ...............  Include fonts - oxygen bold & source sans pro - regular .............. */
+@font-face {
+  font-family: 'Stag-Black';
+  src: url('../fonts/Stag-Black.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/Stag-Black.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/Stag-Black.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/Stag-Black.otf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/Stag-Black') format('svg'); /* Legacy iOS */
+}
+
+
+/* ...............  font decleration */
+
+body{
+  font-size: 14px;
+  color: #323232;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, button {
+	font-family: 'Oxygen-Bold',Helvetica,Arial,sans-serif;
+}
+body *{
+  margin: 0;
+  padding: 0;
+}
+h3.block-heading { font-size: 27px; }
+
+/* ...............  General resets ..................  */
+ul, li { list-style:none; margin: 0; padding: 0; }
+
+a:hover { text-decoration: underline; }
+a:hover, a:focus, a:active {
+	outline: 0;
+  text-decoration: none !important;
+}
+.paddinig0{
+  padding: 0 !important
+}
+.margin0{
+  margin: 0 !important
+}
+.displayTable{
+  display: table;
+  width: 100%;
+}
+.displayTableCell{
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/*Header CSS Starts*/
+.logo-wrapper a {
+    color: #fff;
+}
+.btn:focus, button:focus { outline: none; }
+
+header {
+  background-color: #323232;
+  color: #fff;
+}
+.header-wrapper {
+    height: 100px;
+    padding: 15px;
+}
+.header-txt{
+  text-align: center;
+  text-decoration: underline;
+}
+.header-txt h1{
+	font-family: 'Stag-Black';
+    display: inline-block;
+    font-size: 45px;
+	line-height:45px;
+    border-bottom: 2px solid #fff;
+}
+.logo-wrapper, .myAccount {
+    width: 245px;
+}
+.logo-wrapper{
+    height: 74px;
+    background: #F89938;
+    text-align: center;
+}
+.logo-wrapper a {
+    font-size: 38px;
+    font-weight: bold;
+}
+p.user-info {
+    text-align: right;
+    color: #646565;
+    font-weight: bold;
+    cursor: pointer;
+}
+p.user-info .user-img{
+  background-image: url('../img/icons/user_info.png');
+  display: inline-block;
+  width: 21px;
+  height: 28px;
+  margin-left: 8px
+}
+/*Header CSS Ends*/
+
+/*records block css starts*/
+.records-wrapper{
+  background: #323232;
+  height: 40px;
+  margin: 7px 0;
+}
+.records-wrapper ul li{
+  float: left;
+  padding-left: 20px;
+  padding-top: 4px;
+}
+.records-wrapper ul li div{
+  display: inline-block;
+  vertical-align: middle;
+}
+.records-wrapper ul li a, .records-wrapper ul li a:hover{
+  color: #fff;
+}
+.records-wrapper ul li span{
+  display: inline-block;
+  height: 28px;
+  width: 29px;
+  margin-right: 10px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+.records-wrapper ul li.accounts-record span{
+  background-image: url('../img/icons/accounts.png');
+}
+.records-wrapper ul li.activity-record span{
+  background-image: url('../img/icons/activity.png');
+}
+.records-wrapper ul li.lessons-record span{
+  background-image: url('../img/icons/complete_course.png');
+}
+/*records block css starts*/
+
+/* Aside content*/
+.side-content-wrapper, .navigation{
+  background-color: #e6e6e5;
+}
+.Module-list{
+  padding: 70px 40px 20px 40px
+}
+.Module-list li a{
+  display: block;
+  width: 215px;
+  height: 80px;
+  color: #f89938;
+  background-color: #fff;
+  margin-bottom: 22px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 28px
+}
+
+/*Right main content navigation*/
+.mainbox-right{
+  padding-left: 15px;
+}
+.navigation{
+  text-align: center;
+}
+.navigation ul{
+  background-color: #fff;
+  display: inline-block;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+.navigation ul li{
+  display: inline-block;
+  margin: 3px;
+}
+.navigation ul li a{
+  background-color: #646565;
+  color: #fff;
+  padding: 5px 45px;
+}
+.navigation ul li a:hover{
+  background-color: #323232
+}
+/*Right main content navigation*/
+
+/*maosnary title*/
+.masonary-title-box{
+  padding: 10px 15px 10px 0px;
+}
+.result-numbers {
+    margin-top: -17px;
+}
+.masonary-title h2{
+  color: #f89938;
+  font-family: 'Stag-Black';
+  font-size: 21px;
+  margin: 8px 0;
+}
+.masonary-title p{
+  font-weight: bold;
+}
+.result-numbers{
+  color: #999999;
+  font-weight: bold;
+}
+/*maosnary title*/
+
+/*Masonary Grid*/
+.girdItem{
+    float: left;
+    width: 24%;
+    padding: 10px 0 0;
+    border: 1px solid #E6E6E5;
+    margin-bottom: 10px;
+}
+.girdItem img{
+	width:100%;
+	height:auto;
+}
+img{
+    /* width: 100%; */
+    height: auto;
+    max-width: 100%;
+}
+ul.webActions-large li, ul.webActions-large li a, ul.webActions li, ul.webActions li a {
+    display: inline-block;
+}
+ul.webActions li a {
+    display: block;
+    position: relative;
+    color: #9F9F9F;
+    font-size: 10px;
+    padding-left: 19px;
+    float: left;
+    font-weight: bold;
+}
+ul.webActions li a:before {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    position: absolute;
+    left: 0;
+}
+.girdItem p{
+  font-size: 10px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  padding-left: 8px
+}
+.girdItem .main-artcle a{
+  margin: 8px 0 10px;
+  padding-left: 8px;
+  color: #323232;
+  font-weight: bold;
+  display: inline-block;
+}
+
+/*Masonary Grid*/
+
+/*----------- Landing Page -------------*/
+.landing-page{
+	background:#323232;
+	min-height:100%;
+	position:absolute;
+	top:0;
+	width:100%;
+	padding-top:70px;
+}
+.logo-container{
+	background:#F89938;
+	padding:80px;
+	max-width: 700px;
+    text-align: center;
+	margin:55px auto;
+}
+.welcome-text{
+	text-align:center;
+	margin-bottom:70px;
+	text-transform:uppercase;
+}
+.welcome-text h3{
+	font-size:20px;
+	color:#F89938;
+	margin-bottom:40px;
+}
+.enter-btn{
+	font-size:30px;
+	line-height: 30px;
+	display:inline-block;
+	color:#fff;
+	border:2px solid #fff;
+	padding:10px 28px;
+	-webkit-transition:all 0.3s;
+	-moz-transition:all 0.3s;
+	transition:all 0.3s;
+}
+.enter-btn:hover{
+	background:#fff;
+	color:#323232;
+}
+
+/*----------- Landing Page -------------*/
