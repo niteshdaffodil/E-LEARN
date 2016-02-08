@@ -5,6 +5,7 @@ var helper = require('../helper/response');
 var router = express.Router();
 /* GET users listing. */
 router.get('/',[moduleController.getAllModule,helper.handleSuccess]);
+router.get('/:id',[moduleController.getModule,helper.handleSuccess]);
 router.get('/:id/lessons',[moduleController.getModuleLessions,helper.handleSuccess]);
 router.post('/',[moduleController.addModule,helper.handleSuccess]);
 

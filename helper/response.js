@@ -4,7 +4,14 @@ responseHelper = {
 		var resData = { result: req.result, token: req.token ? req.token : null }
 		res.json(responseHelper.responseObject(200, "ok", resData, false));
 	},
-
+	handleError : function(statusCode, message){
+		return	{
+			statusCode: statusCode ? statusCode : 500,
+			message: message ? message : "error",
+			result: {},
+			error: true
+		}
+	},
 	responseObject : function(statusCode, message, result ,error){
 		return	{
 			statusCode: statusCode ? statusCode : 200,

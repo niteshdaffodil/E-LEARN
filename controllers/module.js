@@ -22,6 +22,16 @@ module.exports = {
 			res.json(helper.responseObject(422, err, null, true));
 		});
 	},
+	getModule : function(req, res, next){
+		Module.find({_id:req.params.id,deleted:false})
+		.then(function(module){
+			req.result = module;
+			next();
+		})
+		.catch(function(err){
+			res.json(helper.responseObject(422, err, null, true));
+		})
+	},
 	getAllModule : function(req, res, next){
 		Module.find({deleted:false})
 		.then(function(modules){
