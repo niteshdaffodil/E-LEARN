@@ -35,8 +35,8 @@ module.exports = {
 	},
 	validateEmail : function(req, res, next){
 
-		if(validator.isEmail(req.params.email)){
-			User.find({'local.email':req.params.email})
+		if(validator.isEmail(req.body.email)){
+			User.find({'local.email':req.body.email})
 			.then(function(user){
 				if(!user.length){
 					req.result = { message:"varified" };
