@@ -7,7 +7,6 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
 var config = require('./config/config')
-var routes = require('./routes/index');
 var users = require('./routes/users');
 var modules = require('./routes/modules');
 var lessons = require('./routes/lessons');
@@ -33,7 +32,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
 app.use('/users', users);
 app.use('/modules', modules);
 app.use('/lessons', lessons);
