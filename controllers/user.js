@@ -18,7 +18,12 @@ module.exports = {
 		}
 	},
 	signup : function(req, res, next){
-		(new User(req.body)).save()
+		var newUser = new User();
+		newUser.local.email = req.body.email;
+		newUser.local.name = req.body.name;
+		newUser.local.password = req.body.password;
+		newUser.local.dob = req.body.dob;
+		newUser.save()
 		.then(function(user){
 			console.log("user",user)
 			req.result = user;
@@ -31,7 +36,7 @@ module.exports = {
 	validateEmail : function(req, res, next){
 
 		if(validator.isEmail(req.params.email)){
-			User.find({email:req.params.email})
+			User.find({'local.email':req.params.email})
 			.then(function(user){
 				if(!user.length){
 					req.result = { message:"varified" };
