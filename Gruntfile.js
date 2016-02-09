@@ -5,11 +5,11 @@ module.exports = function(grunt){
 			build: 'build/'
 		}, 
 		jshint: {
-			build: ['Gruntfile.js','public/app/components/**/*.js','public/app/shared/**/*.js']
+			build: ['Gruntfile.js','public/app/app.service.js','public/app/components/**/*.js','public/app/shared/**/*.js']
 		},
 		concat: {
 			build: {
-				src: ["public/app/components/**/*.js", 'public/app/shared/**/*.js'],
+				src: ['public/app/app.service.js', "public/app/components/**/*.js", 'public/app/shared/**/*.js'],
 				dest: 'public/build/app/js/scripts/scripts.js'
 			}
 		},

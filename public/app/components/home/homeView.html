@@ -25,30 +25,18 @@
 		<!-- side content starts -->
 			<div class="col-md-3 paddinig0">
 				<div class="side-content-wrapper">
-					<ul class="Module-list text-uppercase">
-						<li>
-							<a href="">Module 1</a>
-						</li>
-						<li>
-							<a href="">Module 2</a>
-						</li>
-						<li>
-							<a href="">Module 3</a>
-						</li>
-						<li>
-							<a href="">Module 4</a>
-						</li>
-						<li>
-							<a href="">Module 5</a>
-						</li>
-						<li>
-							<a href="">Module 6</a>
-						</li>
-					</ul>					
+					<div class="panel-group Module-list text-uppercase" id="accordion" >
+						<uib-accordion close-others="oneAtATime">
+							<uib-accordion-group heading="{{modulelist.name}}" ng-repeat="modulelist in modules" data-ng-click="submitSave(modulelist._id)">
+								<ul>
+									<li data-ng-click="expandLesson($event)"><span>lesson1</span>{{$index +1}}{{lesson}}</li>
+								</ul>
+							</uib-accordion-group>
+						</uib-accordion>
+					</div>					
 				</div>
 			</div>
 		<!-- side content ends -->
-		
 		<!-- Right masonary content -->
 			<div class="col-md-9 paddinig0">
 			<div class="mainbox-right">

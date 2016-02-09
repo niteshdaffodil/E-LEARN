@@ -14,12 +14,24 @@
        url('../fonts/Stag-Black') format('svg'); /* Legacy iOS */
 }
 
+/*@font-face {
+  font-family: 'helvetica-neue-bold';
+  src: url('fonts/helvetica-neue-bold.eot?#iefix') format('embedded-opentype'),  
+       url('fonts/helvetica-neue-bold.woff') format('woff'), 
+	   url('fonts/helvetica-neue-bold.ttf')  format('truetype'), 
+	   url('fonts/helvetica-neue-bold.svg#HelveticaNeue') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}*/
+
+
 
 /* ...............  font decleration */
 
 body{
   font-size: 14px;
   color: #323232;
+  position:relative;
 }
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, button {
 	font-family: 'Oxygen-Bold',Helvetica,Arial,sans-serif;
@@ -97,7 +109,7 @@ p.user-info {
     cursor: pointer;
 }
 p.user-info .user-img{
-  background-image: url('../img/icons/user_info.png');
+  background-image: url('../images/icons/user_info.png');
   display: inline-block;
   width: 21px;
   height: 28px;
@@ -132,13 +144,13 @@ p.user-info .user-img{
   background-position: 50%;
 }
 .records-wrapper ul li.accounts-record span{
-  background-image: url('../img/icons/accounts.png');
+  background-image: url('../images/icons/accounts.png');
 }
 .records-wrapper ul li.activity-record span{
-  background-image: url('../img/icons/activity.png');
+  background-image: url('../images/icons/activity.png');
 }
 .records-wrapper ul li.lessons-record span{
-  background-image: url('../img/icons/complete_course.png');
+  background-image: url('../images/icons/complete_course.png');
 }
 /*records block css starts*/
 
@@ -149,20 +161,34 @@ p.user-info .user-img{
 .Module-list{
   padding: 70px 40px 20px 40px
 }
-.Module-list li a{
+.Module-list .panel-heading{
   display: block;
-  width: 215px;
-  height: 80px;
-  color: #f89938;
   background-color: #fff;
-  margin-bottom: 22px;
+  padding-top: 28px;
+  padding-bottom:28px;
+   text-align: center;
+   border-radius: 0;
+}
+.Module-list .panel a{
+  color: #f89938;
   font-size: 18px;
   font-weight: bold;
-  text-align: center;
-  padding-top: 28px
 }
-
+.Module-list .active{background:#f89938;}
+.Module-list .active a{color:#fff;}
+.Module-list .panel{margin-bottom:20px}
+.panel-body span {
+   font-size:12px;
+   color: #f89938;
+}
+.Module-list .panel-body a{
+   font-size:12px;
+   color: #000; margin-left:8px;}
+   
 /*Right main content navigation*/
+
+
+
 .mainbox-right{
   padding-left: 15px;
 }
@@ -308,3 +334,99 @@ ul.webActions li a:before {
 }
 
 /*----------- Landing Page -------------*/
+
+#color-overlay {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: black;
+   opacity: 0.6;
+}
+.row.Activity-popup .col-md-5 {
+    background: #fff none repeat scroll 0 0;
+    position: absolute;
+    top: 0;
+    z-index: 50000;
+}
+.Activity-popup .panel-body{background:#f3f3f3;padding:0px;}
+.values{padding: 15px;}
+.values h2 {
+    color: #f89938;
+    font-size: 21px;
+	font-family: 'Stag-Black';
+}
+.values span{color:#000;font-size: 21px;}
+
+.values p {
+    margin-top: 12px;
+}
+.Activity-popup .panel {
+    background-color: transparent;
+    border: 0 none;
+    border-radius: 0;
+    margin-bottom: 0;
+}
+.orange {
+    background: #f89938;
+    border: 0 none;
+    border-radius: 0;
+    color: #fff;
+    font-family: stag-black;
+    font-size: 13.98px;
+}
+.grey{
+    background: #646565;
+    border: 0 none;
+    border-radius: 0;
+    color: #f89938;
+    font-family: stag-black;
+    font-size: 13.98px;
+}
+.btn-default:hover {
+    background-color: #000;
+    color: #fff;
+}
+.values ul {
+    margin: 15px 0;
+}
+.button-section span{width:100%; margin:0 auto;}
+.button-section span {
+    display: block; margin-bottom:15px;}
+.button-section {
+    text-align: center;
+}
+.button-section btn{width:212px;}
+.activity-section {
+    background: #989898 ;
+}
+.values textarea {
+    border-radius: 0;
+    box-shadow: inherit;
+    resize: inherit;
+}
+.activity-section h2{color:#fff;}
+.activity-section p{color:#fff; margin-bottom:12px;}
+.activity-section .form-group {
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+.uploadbtn {
+    float: left;
+}
+.chosse-btn {
+    float: right;
+}
+.light-grey{
+    background: #d2d2d1;
+    border: 0 none;
+    border-radius: 0;
+    color: #000;
+    font-family: stag-black;
+    font-size: 13.98px;
+}
+.uploadbtn a {
+    color: #fff;
+    text-transform: uppercase;
+}
