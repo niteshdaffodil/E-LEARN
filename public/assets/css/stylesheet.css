@@ -71,7 +71,7 @@ a:hover, a:focus, a:active {
 }
 .btn:focus, button:focus { outline: none; }
 
-header {
+.header {
   background-color: #323232;
   color: #fff;
 }

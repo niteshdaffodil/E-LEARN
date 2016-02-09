@@ -40,7 +40,19 @@ app.controller("homeController",['$scope','moduleService','lessonService', funct
 console.log("In home controller");
 $scope.modules =[];
 $scope.lesson = '';
- $scope.oneAtATime = true;
+$scope.oneAtATime = true;
+$scope.showCommunity = true;
+$scope.showSpace = false;
+$scope.showMyspace = function(){
+  console.log("HiiiishowMyspace");
+  $scope.showCommunity = false;
+  $scope.showSpace = true;
+};
+$scope.showMycommunity = function(){
+  console.log("HiiiishowMycommunity");
+  $scope.showCommunity = true;
+  $scope.showSpace = false;
+};
 //$scope.users = UserService.query();
 /*moduleService.get({ id: 10 },function (data) {
    console.log('success, got data: ', data);
@@ -59,11 +71,16 @@ lessonService.get({ id: '56b5e075b7d52a8145c13825' }, function(data) {
     $scope.lesson = data;
     console.log("lesson" , data , $scope.lesson);
 });
+
 $scope.submitSave = function(Id){
+   $scope.showLesson = false;
 	console.log("submitSave", Id);
 	lessonService.get({ id: Id }, function(data) {
-    $scope.lesson = data.statusCode;
+    $scope.lesson = data.result.result;
     console.log("lesson" , data , $scope.lesson);
+    if($scope.lesson.length > 0){
+      $scope.showLesson = true;
+    } 
 });
 };
 $scope.expandLesson = function($event){
@@ -75,7 +92,7 @@ app.factory('moduleService', function ($resource) {
    return  $resource(APP.endpoints.module,{},{query: { method: "GET", isArray: false }});
 });
 app.factory('lessonService', function ($resource) {
-   return  $resource(APP.endpoints.lession);
+	return  $resource(APP.endpoints.lesson);
 });
 
 app.controller("landingController",['$scope','$element', function($scope,$element) {
@@ -84,9 +101,23 @@ app.controller("landingController",['$scope','$element', function($scope,$elemen
 
 }]);
 
+app.directive('community', function () {
+	return {
+		templateUrl: 'app/shared/community/communityView.html',
+		restrict: 'E',
+		controller: ''
+	};
+});
 app.directive('header', function () {
 	return {
 		templateUrl: 'app/shared/header/headerView.html',
+		restrict: 'E',
+		controller: ''
+	};
+});
+app.directive('mySpace', function () {
+	return {
+		templateUrl: 'app/shared/myspace/myspaceView.html',
 		restrict: 'E',
 		controller: ''
 	};

@@ -2,7 +2,19 @@ app.controller("homeController",['$scope','moduleService','lessonService', funct
 console.log("In home controller");
 $scope.modules =[];
 $scope.lesson = '';
- $scope.oneAtATime = true;
+$scope.oneAtATime = true;
+$scope.showCommunity = true;
+$scope.showSpace = false;
+$scope.showMyspace = function(){
+  console.log("HiiiishowMyspace");
+  $scope.showCommunity = false;
+  $scope.showSpace = true;
+};
+$scope.showMycommunity = function(){
+  console.log("HiiiishowMycommunity");
+  $scope.showCommunity = true;
+  $scope.showSpace = false;
+};
 //$scope.users = UserService.query();
 /*moduleService.get({ id: 10 },function (data) {
    console.log('success, got data: ', data);
@@ -21,11 +33,16 @@ lessonService.get({ id: '56b5e075b7d52a8145c13825' }, function(data) {
     $scope.lesson = data;
     console.log("lesson" , data , $scope.lesson);
 });
+
 $scope.submitSave = function(Id){
+   $scope.showLesson = false;
 	console.log("submitSave", Id);
 	lessonService.get({ id: Id }, function(data) {
-    $scope.lesson = data.statusCode;
+    $scope.lesson = data.result.result;
     console.log("lesson" , data , $scope.lesson);
+    if($scope.lesson.length > 0){
+      $scope.showLesson = true;
+    } 
 });
 };
 $scope.expandLesson = function($event){

@@ -2,21 +2,7 @@
 
 	<div class="container-fluid">
 	<!-- Records block starts -->
-		<div class="row">
-			<div class="records-wrapper">
-				<ul class="records-list clear-fix">
-					<li class="accounts-record">
-						<div><span></span></div><a href="">2479 ACCOUNTS</a>
-					</li>
-					<li class="activity-record">
-						<div><span></span></div><a href="">123 ACTIVTY ITEMS</a>
-					</li>
-					<li class="lessons-record">
-						<div><span></span></div><a href="">123 COMPLETED LESSONS</a>
-					</li>
-				</ul>
-			</div>
-		</div>
+		
     <!-- Records block ends -->
 
     <!-- Main container -->
@@ -29,7 +15,8 @@
 						<uib-accordion close-others="oneAtATime">
 							<uib-accordion-group heading="{{modulelist.name}}" ng-repeat="modulelist in modules" data-ng-click="submitSave(modulelist._id)">
 								<ul>
-									<li data-ng-click="expandLesson($event)"><span>lesson1</span>{{$index +1}}{{lesson}}</li>
+									<li data-ng-show="showLesson" data-ng-repeat="lessons in lesson" data-ng-click="expandLesson($event)"><span>lesson {{$index +1}}</span> {{lessons.name}}</li>
+									<li data-ng-hide="showLesson"><span>No lesson found</span></li>
 								</ul>
 							</uib-accordion-group>
 						</uib-accordion>
@@ -44,352 +31,34 @@
 				<div class="navigation">
 					<ul class="navigatin-box text-uppercase clear-fix">
 						<li>
-							<a href="">My Space</a>
+							<a data-ng-click="showMyspace()">My Space</a>
 						</li>
 						<li>
-							<a href="">My Groups</a>
+							<a data-ng-click="showMygroups()">My Groups</a>
 						</li>
 						<li>
-							<a href="">My Community Space</a>
+							<a data-ng-click="showMycommunity()">My Community Space</a>
 						</li>
 					</ul>
 				</div>
 			<!-- masonary navigation -->
+				<community data-ng-show="showCommunity"></community>
+				<my-Space data-ng-show="showSpace"></my-Space>
 
-			<!-- masonary title -->
-				<div class="masonary-title-box text-uppercase">
-					<div class="masonary-title">
-						<h2>My Community Space</h2>
-						<p>SEE WHAT IS TRENDING IN YOUR COMMUNITY!</p>
-					</div>
-					<div class="result-numbers pull-right">
-						<p>Showing 9/274 <span></span></p>
-					</div>
-				</div>
-			<!-- masonary title -->
-
-			<!--Masonary Grid  -->
-				<div class="masoranyGridBox">
-					<div id="masoranyGrid" class="clearfix">
-					<!-- gridItem starts -->
-						<div class="girdItem heightOne">
-							<h5 class="heading-article"><p><span> </span>Lorem ipmd dolord aoanugld</p></h5>
-							<div class="video-box">
-								<img src="assets/img//videoBox.jpeg">
-							</div>
-							<div class="main-artcle">
-								<a href="">Lorem ipmd dolord aoanugld</a>
-							</div>
-							<div>
-								<ul class="webActions clear-fix">
-									<li><a href="" class="like-small"><span>27</span> </a></li>
-									<li><a href="" class="bookmark-small"><span>299,99</span> </a></li>
-									<li><a href="" class="bookmark-small pull-right">Source</a></li>
-								</ul>
-							</div>
-						</div>
-					<!-- gridItem ends -->
-
-					<!-- gridItem starts -->
-						<div class="girdItem heightTwo">
-							<h5 class="heading-article"><p><span> </span>Lorem ipmd dolord aoanugld</p></h5>
-							<div class="video-box">
-								<img src="assets/img/SquareBox.jpeg">
-							</div>
-							<div class="main-artcle">
-								<a href="">Lorem ipmd dolord aoanugld</a>
-							</div>
-							<div>
-								<ul class="webActions clear-fix">
-									<li><a href="" class="like-small"><span>2997</span> </a></li>
-									<li><a href="" class="bookmark-small"><span>299,99</span> </a></li>
-									<li><a href="" class="bookmark-small pull-right">Source</a></li>
-								</ul>
-							</div>
-						</div>
-					<!-- gridItem ends -->
-					<!-- gridItem starts -->
-						<div class="girdItem heightOne">
-							<h5 class="heading-article"><p><span> </span>Lorem ipmd dolord aoanugld</p></h5>
-							<div class="video-box">
-								<img src="assets/img/videoBox.jpeg">
-							</div>
-							<div class="main-artcle">
-								<a href="">Lorem ipmd dolord aoanugld</a>
-							</div>
-							<div>
-								<ul class="webActions clear-fix">
-									<li><a href="" class="like-small"><span>2997</span> </a></li>
-									<li><a href="" class="bookmark-small"><span>299,99</span> </a></li>
-									<li><a href="" class="bookmark-small pull-right">Source</a></li>
-								</ul>
-							</div>
-						</div>
-					<!-- gridItem ends -->
-
-					<!-- gridItem starts -->
-						<div class="girdItem heightTwo">
-							<h5 class="heading-article"><p><span> </span>Lorem ipmd dolord aoanugld</p></h5>
-							<div class="video-box">
-								<img src="assets/img/SquareBox.jpeg">
-							</div>
-							<div class="main-artcle">
-								<a href="">Lorem ipmd dolord aoanugld</a>
-							</div>
-							<div>
-								<ul class="webActions clear-fix">
-									<li><a href="" class="like-small"><span>2997</span> </a></li>
-									<li><a href="" class="bookmark-small"><span>299,99</span> </a></li>
-									<li><a href="" class="bookmark-small pull-right">Source</a></li>
-								</ul>
-							</div>
-						</div>
-					<!-- gridItem ends -->
-
-					<!-- gridItem starts -->
-						<div class="girdItem heightOne">
-							<h5 class="heading-article"><p><span> </span>Lorem ipmd dolord aoanugld</p></h5>
-							<div class="video-box">
-								<img src="assets/img/videoBox.jpeg">
-							</div>
-							<div class="main-artcle">
-								<a href="">Lorem ipmd dolord aoanugld</a>
-							</div>
-							<div>
-								<ul class="webActions clear-fix">
-									<li><a href="" class="like-small"><span>2997</span> </a></li>
-									<li><a href="" class="bookmark-small"><span>299,99</span> </a></li>
-									<li><a href="" class="bookmark-small pull-right">Source</a></li>
-								</ul>
-							</div>
-						</div>
-					<!-- gridItem ends -->
-
-					<!-- gridItem starts -->
-						<div class="girdItem heightTwo">
-							<h5 class="heading-article"><p><span> </span>Lorem ipmd dolord aoanugld</p></h5>
-							<div class="video-box">
-								<img src="assets/img/SquareBox.jpeg">
-							</div>
-							<div class="main-artcle">
-								<a href="">Lorem ipmd dolord aoanugld</a>
-							</div>
-							<div>
-								<ul class="webActions clear-fix">
-									<li><a href="" class="like-small"><span>2997</span> </a></li>
-									<li><a href="" class="bookmark-small"><span>299,99</span> </a></li>
-									<li><a href="" class="bookmark-small pull-right">Source</a></li>
-								</ul>
-							</div>
-						</div>
-					<!-- gridItem ends -->
-
-					<!-- gridItem starts -->
-						<div class="girdItem heightOne">
-							<h5 class="heading-article"><p><span> </span>Lorem ipmd dolord aoanugld</p></h5>
-							<div class="video-box">
-								<img src="assets/img/videoBox.jpeg">
-							</div>
-							<div class="main-artcle">
-								<a href="">Lorem ipmd dolord aoanugld</a>
-							</div>
-							<div>
-								<ul class="webActions clear-fix">
-									<li><a href="" class="like-small"><span>2997</span> </a></li>
-									<li><a href="" class="bookmark-small"><span>299,99</span> </a></li>
-									<li><a href="" class="bookmark-small pull-right">Source</a></li>
-								</ul>
-							</div>
-						</div>
-					<!-- gridItem ends -->
-
-					<!-- gridItem starts -->
-						<div class="girdItem heightTwo">
-							<h5 class="heading-article"><p><span> </span>Lorem ipmd dolord aoanugld</p></h5>
-							<div class="video-box">
-								<img src="assets/img/SquareBox.jpeg">
-							</div>
-							<div class="main-artcle">
-								<a href="">Lorem ipmd dolord aoanugld</a>
-							</div>
-							<div>
-								<ul class="webActions clear-fix">
-									<li><a href="" class="like-small"><span>2997</span> </a></li>
-									<li><a href="" class="bookmark-small"><span>299,99</span> </a></li>
-									<li><a href="" class="bookmark-small pull-right">Source</a></li>
-								</ul>
-							</div>
-						</div>
-					<!-- gridItem ends -->
-
-					<!-- gridItem starts -->
-						<div class="girdItem heightOne">
-							<h5 class="heading-article"><p><span> </span>Lorem ipmd dolord aoanugld</p></h5>
-							<div class="video-box">
-								<img src="assets/img/videoBox.jpeg">
-							</div>
-							<div class="main-artcle">
-								<a href="">Lorem ipmd dolord aoanugld</a>
-							</div>
-							<div>
-								<ul class="webActions clear-fix">
-									<li><a href="" class="like-small"><span>2997</span> </a></li>
-									<li><a href="" class="bookmark-small"><span>299,99</span> </a></li>
-									<li><a href="" class="bookmark-small pull-right">Source</a></li>
-								</ul>
-							</div>
-						</div>
-					<!-- gridItem ends -->
-
-					<!-- gridItem starts -->
-						<div class="girdItem heightTwo">
-							<h5 class="heading-article"><p><span> </span>Lorem ipmd dolord aoanugld</p></h5>
-							<div class="video-box">
-								<img src="assets/img/SquareBox.jpeg">
-							</div>
-							<div class="main-artcle">
-								<a href="">Lorem ipmd dolord aoanugld</a>
-							</div>
-							<div>
-								<ul class="webActions clear-fix">
-									<li><a href="" class="like-small"><span>2997</span> </a></li>
-									<li><a href="" class="bookmark-small"><span>299,99</span> </a></li>
-									<li><a href="" class="bookmark-small pull-right">Source</a></li>
-								</ul>
-							</div>
-						</div>
-					<!-- gridItem ends -->
-
-					<!-- gridItem starts -->
-						<div class="girdItem heightOne">
-							<h5 class="heading-article"><p><span> </span>Lorem ipmd dolord aoanugld</p></h5>
-							<div class="video-box">
-								<img src="assets/img/videoBox.jpeg">
-							</div>
-							<div class="main-artcle">
-								<a href="">Lorem ipmd dolord aoanugld</a>
-							</div>
-							<div>
-								<ul class="webActions clear-fix">
-									<li><a href="" class="like-small"><span>2997</span> </a></li>
-									<li><a href="" class="bookmark-small"><span>299,99</span> </a></li>
-									<li><a href="" class="bookmark-small pull-right">Source</a></li>
-								</ul>
-							</div>
-						</div>
-					<!-- gridItem ends -->
-
-					<!-- gridItem starts -->
-						<div class="girdItem heightTwo">
-							<h5 class="heading-article"><p><span> </span>Lorem ipmd dolord aoanugld</p></h5>
-							<div class="video-box">
-								<img src="assets/img/SquareBox.jpeg">
-							</div>
-							<div class="main-artcle">
-								<a href="">Lorem ipmd dolord aoanugld</a>
-							</div>
-							<div>
-								<ul class="webActions clear-fix">
-									<li><a href="" class="like-small"><span>2997</span> </a></li>
-									<li><a href="" class="bookmark-small"><span>299,99</span> </a></li>
-									<li><a href="" class="bookmark-small pull-right">Source</a></li>
-								</ul>
-							</div>
-						</div>
-					<!-- gridItem ends -->
-
-					<!-- gridItem starts -->
-						<div class="girdItem heightOne">
-							<h5 class="heading-article"><p><span> </span>Lorem ipmd dolord aoanugld</p></h5>
-							<div class="video-box">
-								<img src="assets/img/videoBox.jpeg">
-							</div>
-							<div class="main-artcle">
-								<a href="">Lorem ipmd dolord aoanugld</a>
-							</div>
-							<div>
-								<ul class="webActions clear-fix">
-									<li><a href="" class="like-small"><span>2997</span> </a></li>
-									<li><a href="" class="bookmark-small"><span>299,99</span> </a></li>
-									<li><a href="" class="bookmark-small pull-right">Source</a></li>
-								</ul>
-							</div>
-						</div>
-					<!-- gridItem ends -->
-
-					<!-- gridItem starts -->
-						<div class="girdItem heightTwo">
-							<h5 class="heading-article"><p><span> </span>Lorem ipmd dolord aoanugld</p></h5>
-							<div class="video-box">
-								<img src="assets/img/SquareBox.jpeg">
-							</div>
-							<div class="main-artcle">
-								<a href="">Lorem ipmd dolord aoanugld</a>
-							</div>
-							<div>
-								<ul class="webActions clear-fix">
-									<li><a href="" class="like-small"><span>2997</span> </a></li>
-									<li><a href="" class="bookmark-small"><span>299,99</span> </a></li>
-									<li><a href="" class="bookmark-small pull-right">Source</a></li>
-								</ul>
-							</div>
-						</div>
-					<!-- gridItem ends -->
-
-					<!-- gridItem starts -->
-						<div class="girdItem heightOne">
-							<h5 class="heading-article"><p><span> </span>Lorem ipmd dolord aoanugld</p></h5>
-							<div class="video-box">
-								<img src="assets/img/videoBox.jpeg">
-							</div>
-							<div class="main-artcle">
-								<a href="">Lorem ipmd dolord aoanugld</a>
-							</div>
-							<div>
-								<ul class="webActions clear-fix">
-									<li><a href="" class="like-small"><span>2997</span> </a></li>
-									<li><a href="" class="bookmark-small"><span>299,99</span> </a></li>
-									<li><a href="" class="bookmark-small pull-right">Source</a></li>
-								</ul>
-							</div>
-						</div>
-					<!-- gridItem ends -->
-
-					<!-- gridItem starts -->
-						<div class="girdItem heightTwo">
-							<h5 class="heading-article"><p><span> </span>Lorem ipmd dolord aoanugld</p></h5>
-							<div class="video-box">
-								<img src="assets/img/SquareBox.jpeg">
-							</div>
-							<div class="main-artcle">
-								<a href="">Lorem ipmd dolord aoanugld</a>
-							</div>
-							<div>
-								<ul class="webActions clear-fix">
-									<li><a href="" class="like-small"><span>2997</span> </a></li>
-									<li><a href="" class="bookmark-small"><span>299,99</span> </a></li>
-									<li><a href="" class="bookmark-small pull-right">Source</a></li>
-								</ul>
-							</div>
-						</div>
-					<!-- gridItem ends -->
-
-					</div>
-				</div>
-			<!--Masonary Grid  -->
-			</div>
-			</div>
-		<!-- Right masonary content -->
-		</div>    	
-    </div>
-    <!-- Main container -->
-    </div>
-    <!-- container fluis ends -->
-    <script type="text/javascript">
-        var $grid = $('#masoranyGrid').masonry({
-          columnWidth:1,
-          itemSelector: '.girdItem',
-          gutter: 30,
-           percentPosition: true
-        });
-    </script>
+		
+		</div>
+		</div>
+	<!-- Right masonary content -->
+	</div>    	
+</div>
+<!-- Main container -->
+</div>
+<!-- container fluis ends -->
+<script type="text/javascript">
+    var $grid = $('#masoranyGrid').masonry({
+      columnWidth:1,
+      itemSelector: '.girdItem',
+      gutter: 30,
+       percentPosition: true
+    });
+</script>
