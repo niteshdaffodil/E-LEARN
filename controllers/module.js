@@ -1,6 +1,8 @@
 var Module = require('../models/modules');
 var Lesson = require('../models/lessons');
 var helper = require('../helper/response');
+var validator = require('validator');
+
 module.exports = {
 	addModule : function(req, res, next){
 		Module.findOne({name:req.body.name})
@@ -21,6 +23,20 @@ module.exports = {
 		.catch(function(err){
 			res.json(helper.responseObject(422, err, null, true));
 		});
+	},
+	getModule : function(req, res, next){
+		if(validator.isMongoId(req.params.id)){
+			Module.findOne({_id:req.params.id,deleted:false})
+			.then(function(module){
+				req.result = module;
+				next();
+			})
+			.catch(function(err){
+				res.json(helper.responseObject(422, err, null, true));
+			})
+		}else{
+			res.json(handler.handleError(404, "Not Found"));
+		}
 	},
 	getAllModule : function(req, res, next){
 		Module.find({deleted:false})

@@ -2,8 +2,8 @@ var assert = require('chai').assert;
 
 describe("Response Handler",function(){
 	var helper = require('../helper/response');
-	it("should return object with length three",function(done){
-		assert.equal(Object.keys(helper.responseObject()).length,3);
+	it("should return object with length faur",function(done){
+		assert.equal(Object.keys(helper.responseObject()).length,4);
 		done();
 	});
 	it("should return object with status code 200",function(done){

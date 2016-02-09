@@ -10,7 +10,7 @@ var activitySchema = Schema({
   description : { type: String, required: true},
   type : { type: String, required: true},
   url : { type: String },
-  likes : [{ type: Schema.Types.ObjectId, ref: 'Users', required: true }],
+  likes : [{ type: Schema.Types.ObjectId, ref: 'Users' }],
   deleted : { type: Boolean, default: false }
 });
 
